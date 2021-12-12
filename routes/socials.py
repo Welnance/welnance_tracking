@@ -6,6 +6,10 @@ from bson import ObjectId
 
 socials = APIRouter()
 
+@socials.get('/')
+async def Get_social_data():
+    return serializeList(db.socials.find())
+
 @socials.post('/')
 async def post_social(socials: Socials):
     db.socials.insert_one(dict(socials))

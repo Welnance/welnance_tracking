@@ -7,3 +7,4 @@ class Socials(BaseModel):
     Twitter : int
     CMC : int
     Date : datetime 
+    Info : str

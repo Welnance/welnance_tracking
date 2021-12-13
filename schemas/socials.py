@@ -5,7 +5,8 @@ def socialEntity(item) -> dict:
         "Facebook": item["Facebook"],
         "Twitter": item ["Twitter"],
         "CMC": item ["CMC"],
-        "Date": item["Date"]
+        "Date": item["Date"],
+        "Info": item["Info"]
     }
 
 def socialsEntity(entity) -> list:

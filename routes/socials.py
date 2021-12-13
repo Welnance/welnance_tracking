@@ -3,7 +3,7 @@ from models.socials import Socials
 from config.db import db
 from schemas.socials import serializeDict, serializeList
 from bson import ObjectId
-from datetime import datetime
+
 
 socials = APIRouter()
 

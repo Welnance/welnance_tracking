@@ -3,8 +3,10 @@ from models.socials import Socials
 from config.db import db
 from schemas.socials import serializeDict, serializeList
 from bson import ObjectId
+from datetime import datetime
 
 socials = APIRouter()
+
 
 @socials.get('/')
 async def Get_social_data():
@@ -17,7 +19,8 @@ async def post_social(socials: Socials):
 
 @socials.put('/{id}')
 async def update_socials(id,socials: Socials):
-    db.socials.find_one_and_update({"_id":ObjectId(id)},{
+    db.socials.find_one_and_update({"_id":ObjectId(id)},
+    {
         "$set":dict(socials)
     })
     return serializeDict(db.socials.find_one({"_id":ObjectId(id)}))    

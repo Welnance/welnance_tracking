@@ -4,7 +4,8 @@ def socialEntity(item) -> dict:
         "id":str(item["_id"]),
         "Facebook": item["Facebook"],
         "Twitter": item ["Twitter"],
-        "CMC": item ["CMC"]
+        "CMC": item ["CMC"],
+        "Date": item["Date"]
     }
 
 def socialsEntity(entity) -> list:

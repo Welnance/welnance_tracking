@@ -23,4 +23,7 @@ async def update_socials(id,socials: Socials):
     {
         "$set":dict(socials)
     })
-    return serializeDict(db.socials.find_one({"_id":ObjectId(id)}))    
+    return serializeDict(db.socials.find_one({"_id":ObjectId(id)}))
+@socials.delete('/{id}')
+async def delete_submission(id):
+    return serializeDict(db.socials.find_one_and_delete({"_id":ObjectId(id)}))        
